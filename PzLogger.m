@@ -112,9 +112,7 @@ static dispatch_queue_t logQueue = NULL;
             va_end(args);
             static dispatch_once_t onceToken;
             dispatch_async(logQueue, ^{
-                dispatch_once(&onceToken, ^{
-                    NSLog(@"| PzConnect | [%@] %@ [Line %d] %@", levelString, [[NSString stringWithUTF8String:file] lastPathComponent], line, message);
-                });
+                 NSLog(@"| PzConnect | [%@] %@ [Line %d] %@", levelString, [[NSString stringWithUTF8String:file] lastPathComponent], line, message);
             });
             
         }
